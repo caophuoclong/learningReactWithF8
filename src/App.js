@@ -6,6 +6,7 @@ import TodoList from "./components/TodoList";
 import TwoWayBindings from "./components/TwoWayBindings";
 import UpdateTitle from "./components/UpdateTitle"
 import DOMEvents from "./components/DOMEvents"
+import Timer from "./components/Timer"
 import { useState } from "react";
 function App() {
   const [isShow, setIsShow] = useState(false);
@@ -19,7 +20,8 @@ function App() {
       {/* <TwoWayBindings /> */}
       {/* <TodoList /> */}
       {/* <UpdateTitle /> */}
-      {isShow && <DOMEvents />}
+      {/* {isShow && <DOMEvents />} */}
+      {isShow && <Timer />}
     </div>
   );
 }
