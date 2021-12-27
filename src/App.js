@@ -8,6 +8,7 @@ import UpdateTitle from "./components/UpdateTitle"
 import DOMEvents from "./components/DOMEvents"
 import Timer from "./components/Timer"
 import PreviewAvatar from "./components/PreviewAvatar"
+import FakeComment from "./components/FakeComment";
 import { useState } from "react";
 function App() {
   const [isShow, setIsShow] = useState(true);
@@ -23,7 +24,8 @@ function App() {
       {/* <UpdateTitle /> */}
       {/* {isShow && <DOMEvents />} */}
       {/* {isShow && <Timer />} */}
-      {isShow && <PreviewAvatar />}
+      {/* {isShow && <PreviewAvatar />} */}
+      {isShow && <FakeComment />}
     </div>
   );
 }
