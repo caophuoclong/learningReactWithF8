@@ -5,16 +5,21 @@ import RandomGifts from "./components/RandomGifts";
 import TodoList from "./components/TodoList";
 import TwoWayBindings from "./components/TwoWayBindings";
 import UpdateTitle from "./components/UpdateTitle"
+import DOMEvents from "./components/DOMEvents"
+import { useState } from "react";
 function App() {
+  const [isShow, setIsShow] = useState(false);
   return (
     <div className="App">
+      <button onClick={() => setIsShow(!isShow)}>Toggle</button>
       {/* <Counter />
       <Cart />
       <Info /> */}
       {/* <RandomGifts /> */}
       {/* <TwoWayBindings /> */}
       {/* <TodoList /> */}
-      <UpdateTitle />
+      {/* <UpdateTitle /> */}
+      {isShow && <DOMEvents />}
     </div>
   );
 }
