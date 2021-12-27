@@ -10,6 +10,7 @@ import Timer from "./components/Timer"
 import PreviewAvatar from "./components/PreviewAvatar"
 import FakeComment from "./components/FakeComment";
 import LearningMemo from "./components/LearningMemo"
+import UseReducer from "./components/useReducer"
 import { useState } from "react";
 function App() {
   const [isShow, setIsShow] = useState(true);
@@ -27,7 +28,8 @@ function App() {
       {/* {isShow && <Timer />} */}
       {/* {isShow && <PreviewAvatar />} */}
       {/* {isShow && <FakeComment />} */}
-      {isShow && <LearningMemo />}
+      {/* {isShow && <LearningMemo />} */}
+      {isShow && <UseReducer />}
     </div>
   );
 }
