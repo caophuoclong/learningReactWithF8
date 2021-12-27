@@ -7,9 +7,10 @@ import TwoWayBindings from "./components/TwoWayBindings";
 import UpdateTitle from "./components/UpdateTitle"
 import DOMEvents from "./components/DOMEvents"
 import Timer from "./components/Timer"
+import PreviewAvatar from "./components/PreviewAvatar"
 import { useState } from "react";
 function App() {
-  const [isShow, setIsShow] = useState(false);
+  const [isShow, setIsShow] = useState(true);
   return (
     <div className="App">
       <button onClick={() => setIsShow(!isShow)}>Toggle</button>
@@ -21,7 +22,8 @@ function App() {
       {/* <TodoList /> */}
       {/* <UpdateTitle /> */}
       {/* {isShow && <DOMEvents />} */}
-      {isShow && <Timer />}
+      {/* {isShow && <Timer />} */}
+      {isShow && <PreviewAvatar />}
     </div>
   );
 }
