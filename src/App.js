@@ -9,6 +9,7 @@ import DOMEvents from "./components/DOMEvents"
 import Timer from "./components/Timer"
 import PreviewAvatar from "./components/PreviewAvatar"
 import FakeComment from "./components/FakeComment";
+import LearningMemo from "./components/LearningMemo"
 import { useState } from "react";
 function App() {
   const [isShow, setIsShow] = useState(true);
@@ -25,7 +26,8 @@ function App() {
       {/* {isShow && <DOMEvents />} */}
       {/* {isShow && <Timer />} */}
       {/* {isShow && <PreviewAvatar />} */}
-      {isShow && <FakeComment />}
+      {/* {isShow && <FakeComment />} */}
+      {isShow && <LearningMemo />}
     </div>
   );
 }
