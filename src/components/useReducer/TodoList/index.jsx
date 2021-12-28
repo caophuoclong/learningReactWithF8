@@ -1,60 +1,10 @@
 import { useReducer, useRef } from 'react';
-
-const initState = {
-  job: '',
-  jobs: [],
-};
-const SET_JOB = 'set_job';
-const ADD_JOB = 'add_job';
-const DELETE_JOB = 'del_job';
-
-const setJob = (payload) => {
-  return {
-    type: SET_JOB,
-    payload,
-  };
-};
-const addJob = () => {
-  return {
-    type: ADD_JOB,
-  };
-};
-
-const delJob = (payload) => {
-  return {
-    type: DELETE_JOB,
-    payload,
-  };
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case SET_JOB:
-      return {
-        ...state,
-        job: action.payload,
-      };
-    case ADD_JOB:
-      return {
-        ...state,
-        jobs: [...state.jobs, state.job],
-      };
-
-    case DELETE_JOB:
-        const preJobs = [...state.jobs];
-        preJobs.splice(action.payload,1);
-        return {
-            ...state,
-            jobs:  preJobs
-        }
-
-    default:
-      throw new Error(`Invalid action ${action.type}`);
-  }
-};
+import reducer, { initState } from './reducer';
+import {addJob, setJob, delJob} from "./actions"
+import logger from "./logger"
 
 const Todo = () => {
-  const [state, dispatch] = useReducer(reducer, initState);
+  const [state, dispatch] = useReducer(logger(reducer), initState);
   const inputRef = useRef();
   const handleAddJob = () => {
     if (state.job) {
