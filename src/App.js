@@ -11,24 +11,28 @@ import PreviewAvatar from "./components/PreviewAvatar"
 import FakeComment from "./components/FakeComment";
 import LearningMemo from "./components/LearningMemo"
 import UseReducer from "./components/useReducer"
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ThemeContext } from "./ThemeContext"
 function App() {
   const [isShow, setIsShow] = useState(true);
+  const themeContext = useContext(ThemeContext);
+
   return (
-    <div className="App">
+    <div className={themeContext.theme}>
       <button onClick={() => setIsShow(!isShow)}>Toggle</button>
+      <button style={{ maginLeft: "15px" }} onClick={themeContext.toggleTheme}>Toggle Theme</button>
       {/* <Counter />
       <Cart />
-      <Info /> */}
-      {/* <RandomGifts /> */}
-      {/* <TwoWayBindings /> */}
-      {/* <TodoList /> */}
-      {/* <UpdateTitle /> */}
-      {/* {isShow && <DOMEvents />} */}
-      {/* {isShow && <Timer />} */}
-      {/* {isShow && <PreviewAvatar />} */}
-      {/* {isShow && <FakeComment />} */}
-      {/* {isShow && <LearningMemo />} */}
+      <Info />
+      <RandomGifts />
+      <TwoWayBindings />
+      <TodoList />
+      <UpdateTitle />
+      {isShow && <DOMEvents />}
+      {isShow && <Timer />}
+      {isShow && <PreviewAvatar />}
+      {isShow && <FakeComment />}
+      {isShow && <LearningMemo />} */}
       {isShow && <UseReducer />}
     </div>
   );
